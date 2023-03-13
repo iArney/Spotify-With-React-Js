@@ -12,7 +12,7 @@ import ReleaseAndCalendar from "./pages/ReleaseAndCalendar";
 import Events from "./pages/Events";
 import FavoriteSong from "./pages/FavoriteSong";
 
-const Main = ({ apiToken, trackData, search, setSearch }) => {
+const Main = ({ apiToken, trackData, search, setSearch, handleLogout }) => {
   const [isRouteChanged, setIsRouteChanged] = useState(false);
   const routePath = "/trends";
   const location = useLocation();
@@ -64,7 +64,14 @@ const Main = ({ apiToken, trackData, search, setSearch }) => {
   return (
     <AudioProvider>
       <div className="bg-slate-100 w-full h-full relative">
-        <div></div>
+        <div className="w-full relative h-fit mb-4 flex justify-end">
+          <div
+            className="cursor-pointer bg-orange-400 w-2/6 relative top-5 right-3 font-semibold flex justify-center text-white px-4 py-2 rounded-full hover:bg-red-400"
+            onClick={handleLogout}
+          >
+            Logout
+          </div>
+        </div>
         <div className="flex justify-center md:sticky md:top-0 md:ml-36 lg:ml-64 relative">
           <i className="text-slate-400  md:inline relative left-6 top-8 md:left-8 md:top-8 fa-solid fa-magnifying-glass"></i>
           <input
