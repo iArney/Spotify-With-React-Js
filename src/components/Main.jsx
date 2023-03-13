@@ -64,7 +64,7 @@ const Main = ({ apiToken, trackData, search, setSearch, handleLogout }) => {
   return (
     <AudioProvider>
       <div className="bg-slate-100 w-full h-full relative">
-        <div className="w-full relative h-fit mb-4 flex justify-end">
+        <div className="w-full relative h-fit mb-4 flex justify-end sm:inline md:hidden">
           <div
             className="cursor-pointer bg-orange-400 w-2/6 relative top-5 right-3 font-semibold flex justify-center text-white px-4 py-2 rounded-full hover:bg-red-400"
             onClick={handleLogout}
